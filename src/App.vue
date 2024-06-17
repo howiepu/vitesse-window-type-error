@@ -22,6 +22,10 @@ useHead({
     },
   ],
 })
+
+onMounted(() => {
+  window.a = 1
+})
 </script>
 
 <template>

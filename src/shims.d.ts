@@ -1,5 +1,8 @@
+import type { AttributifyAttributes } from '@unocss/preset-attributify'
+
 declare interface Window {
   // extend the window
+  [key: string]: any
 }
 
 // with unplugin-vue-markdown, markdown files can be treated as Vue components
@@ -15,4 +18,8 @@ declare module '*.vue' {
 
   const component: DefineComponent<object, object, any>
   export default component
+}
+
+declare module '@vue/runtime-dom' {
+  interface HTMLAttributes extends AttributifyAttributes {}
 }
